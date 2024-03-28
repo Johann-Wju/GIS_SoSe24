@@ -1,1 +1,1 @@
-# GIS_SoSe24
+--- README ---
