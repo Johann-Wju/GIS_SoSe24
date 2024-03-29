@@ -1,5 +1,5 @@
------ README -----
-==================
+README
+======
 
 Für dieses Projekt, ist angedacht eine Website in HTML, CSS und JavaScript zu schreiben,  
 welche ein ***Blackjack Kartenspiel*** auf der Seite darstellt und der User fiktive nicht reale Chips  
