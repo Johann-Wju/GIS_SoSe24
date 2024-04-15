@@ -24,5 +24,5 @@ Informationsverarbeitung
 Credit
 ------
 
-Vielen Dank an ***ImKennyYip @ GitHub*** für die Texturen der Karten!
-Vielen Dank an ***Happygamer1983 @ GitHub*** für die hilfe mit den verbesserten Texturen!
+Vielen Dank an ***ImKennyYip @ GitHub*** für die Texturen der Karten!  
+Vielen Dank an ***Happygamer1983 @ GitHub*** für die hilfe mit den verbesserten Texturen!  
