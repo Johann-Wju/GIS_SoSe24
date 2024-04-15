@@ -20,3 +20,9 @@ Informationsverarbeitung
 1. Erstellt werden die Informationen in Form der Chips ***(Highscores)*** und werden auf der Seite gespeichert.  
 2. Diese Informationen werden nicht zu bearbeiten sein vom User. Jedoch soll es möglich sein, diese durch einen ***Reset-Button*** zu löschen auf der Highscore-Seite.  
 3. Angezeigt werden soll diese Information durch die Anzahl an Chips ***(Highscores)*** die der User verdient hat auf der Hauptseite wie auch auf der Highscore-Seite.
+
+Credit
+------
+
+Vielen Dank an ***ImKennyYip @ GitHub*** für die Texturen der Karten!
+Vielen Dank an ***Happygamer1983 @ GitHub*** für die hilfe mit den verbesserten Texturen!
