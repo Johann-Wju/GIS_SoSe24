@@ -1,15 +1,17 @@
-footer {
+body {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
     text-align: center;
 }
 
-header {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 a {
+    font-size: larger;
     text-decoration: none;
-    
+    padding: 0px 15px 0px 15px;
+    color: black;
+    border-right: 2px solid black;
 }
 
 #nav {
