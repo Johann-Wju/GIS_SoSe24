@@ -16,22 +16,52 @@
                 <a href="main.html" title="Play Black Jack!"> Game </a>
                 <a href="highscore.html" title="Highscores"> Highscores </a>
                 <a href="impressum.html" title="Impressum/Legal Notice"> Impressum/Legal Notice </a>
-            </nav>
+                <!-- Empty <a></a> to get a border behind the Impressum-->
+                <a></a>
+                <!-- TODO: Highscore is just a placeholder till JavaScript implementation-->
+                <h1 id="your-highscore">Chips: <span id="highscore"> 0020500 </span></h1>
+            </nav> 
         </header>
 
         <footer>
-        <h1>Dealer: <span id="dealer-sum"></span></h1>
+        <!-- TODO: 21 and cards are just a placeholder till JavaScript implementation-->
+        <h1>Dealer: <span id="dealer-sum"> 21 </span></h1>
+
         <div id="dealer-cards">
             <img id="hidden" src="textures\BACK.png">
+            <img id="card" src="textures\Q-S.png">
+            <img id="card" src="textures\A-C.png">
         </div>
 
-        <h1>You: <span id="your-sum"></span></h1>
-        <div id="your-cards"></div>
+        <!-- TODO: 21 and cards are just a placeholder till JavaScript implementation-->
+        <h1>You: <span id="your-sum"> 21 </span></h1>
+
+        <div id="your-cards">
+            <img id="card" src="textures\A-D.png">
+            <img id="card" src="textures\Q-H.png">
+        </div>
 
         <br>
-        <button id="hit">Hit</button>
-        <button id="stay">Stay</button>
-        <p id="results"></p>
+        
+        <div>
+            <button id="hit">Hit</button>
+            <button id="stay">Stay</button>
+        </div>
+
+        <br>
+
+        <div id="bets">
+            <input type="radio" name="chips" value="1000" /><label>1000</label>
+            <input type="radio" name="chips" value="2000" /><label>2000</label>
+            <input type="radio" name="chips" value="5000" /><label>5000</label>
+            <br>
+            <input type="radio" name="chips" value="10000" /><label>10000</label>
+            <input type="radio" name="chips" value="15000" /><label>15000</label>
+            <input type="radio" name="chips" value="20000" /><label>20000</label>
+        </div>
+
+        <!-- TODO: You loose! / You win! is just a placeholder till JavaScript implementation-->
+        <h1 id="win-loose"> You loose! / You win! </h1>
         </footer>
 
     </body>

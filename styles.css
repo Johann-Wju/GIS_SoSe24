@@ -3,15 +3,16 @@ body {
 }
 
 footer {
+    padding-top: 50px;
     text-align: center;
 }
 
 a {
-    font-size: larger;
+    font-size: x-large;
     text-decoration: none;
     padding: 0px 15px 0px 15px;
     color: black;
-    border-right: 2px solid black;
+    border-left: 2px solid black;
 }
 
 #nav {
@@ -19,35 +20,48 @@ a {
     background: lightgray;
     padding-top: 7px;
     padding-left: 7px;
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
     box-shadow: 6px 6px gray;
     text-align: center;
   }
 
 #dealer-cards img {
-    height: 175px;
-    width: 125px;
-    margin: 1px;
+    height: 200px;
+    width: 150px;
+    margin: 5px;
 }
 
 #your-cards img {
-    height: 175px;
-    width: 125px;
-    margin: 1px;
+    height: 200px;
+    width: 150px;
+    margin: 5px;
+}
+
+#your-highscore {
+    text-align: right;
 }
 
 #hit {
-    width: 100px;
-    height: 50px;
-    font-size: 20px;
+    width: 125px;
+    height: 75px;
+    font-size: 35px;
     background: lightgray
 }
 
 #stay {
-    width: 100px;
-    height: 50px;
-    font-size: 20px;
+    width: 125px;
+    height: 75px;
+    font-size: 35px;
     background: lightgray
+}
+
+#bets {
+    font-size: 25px;
+}
+
+#win-loose {
+    padding-top: 20px;
 }
