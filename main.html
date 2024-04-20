@@ -19,8 +19,17 @@
                 <!-- Empty <a></a> to get a border behind the Impressum-->
                 <a></a>
                 <!-- TODO: Highscore is just a placeholder till JavaScript implementation-->
-                <h1 id="your-highscore">Chips: <span id="highscore"> 0020500 </span></h1>
-            </nav> 
+                <h1 id="your-highscore">Chips: <span id="highscore"> 0025000 </span></h1>
+            </nav>
+
+            <!-- TODO: Login will work, when the Backend is implemented-->
+            <div id="login">
+                <label>Username:</label>
+                <input type="text" />
+                <br>
+                <label>Passwort:</label>
+                <input type="password" />
+            </div>
         </header>
 
         <footer>
@@ -46,11 +55,12 @@
         <div>
             <button id="hit">Hit</button>
             <button id="stay">Stay</button>
+            <button id="bet">Bet</button>
         </div>
 
         <br>
 
-        <div id="bets">
+        <div id="bets-number">
             <input type="radio" name="chips" value="1000" /><label>1000</label>
             <input type="radio" name="chips" value="2000" /><label>2000</label>
             <input type="radio" name="chips" value="5000" /><label>5000</label>

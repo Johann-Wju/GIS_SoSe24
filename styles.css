@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace, Arial, sans-serif;
+    background-color: azure;
 }
 
 footer {
@@ -11,30 +12,30 @@ a {
     font-size: x-large;
     text-decoration: none;
     padding: 0px 15px 0px 15px;
-    color: black;
-    border-left: 2px solid black;
+    color: white;
+    border-left: 3px solid black;
 }
 
 #nav {
     height: 30px;
-    background: lightgray;
+    background: darkgray;
     padding-top: 7px;
     padding-left: 7px;
     padding-bottom: 5px;
     margin-top: 15px;
     margin-left: 15px;
     margin-right: 15px;
-    box-shadow: 6px 6px gray;
+    box-shadow: 6px 6px rgb(95, 95, 95);
     text-align: center;
   }
 
-#dealer-cards img {
-    height: 200px;
-    width: 150px;
-    margin: 5px;
-}
+  #login {
+    margin-top: 20px;
+    margin-left: 15px;
+    text-align: left;
+  }
 
-#your-cards img {
+#dealer-cards img, #your-cards img {
     height: 200px;
     width: 150px;
     margin: 5px;
@@ -42,23 +43,22 @@ a {
 
 #your-highscore {
     text-align: right;
+    padding-top: 15px;
 }
 
-#hit {
+#hit, #stay, #bet {
     width: 125px;
     height: 75px;
     font-size: 35px;
-    background: lightgray
+    background-color: lightgray;
 }
 
-#stay {
-    width: 125px;
-    height: 75px;
-    font-size: 35px;
-    background: lightgray
+#hit:hover, #stay:hover, #bet:hover {
+    background-color: darkgray ;
 }
 
-#bets {
+#bets-number {
+    padding-top: 20px;
     font-size: 25px;
 }
 
