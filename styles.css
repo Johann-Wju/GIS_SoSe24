@@ -46,15 +46,16 @@ a {
     padding-top: 15px;
 }
 
-#hit, #stay, #bet {
+#hit, #stay, #bet, #reset {
     width: 125px;
     height: 75px;
     font-size: 35px;
+    margin-top: 20px;
     background-color: lightgray;
 }
 
-#hit:hover, #stay:hover, #bet:hover {
-    background-color: darkgray ;
+#hit:hover, #stay:hover, #bet:hover, #reset:hover {
+    background-color: darkgray;
 }
 
 #bets-number {
@@ -64,4 +65,34 @@ a {
 
 #win-loose {
     padding-top: 20px;
+}
+
+#caption {
+    margin-bottom: 10px;
+    font-size: 50px;
+  }
+
+#table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+th {
+    background: rgb(130, 15, 15);
+    padding: 10px 20px;
+      color: white;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: black;
+}
+    
+td {
+      padding: 7px 20px;
+      background: lightgray;
+      color: black;
 }
