@@ -12,13 +12,13 @@ a {
     font-size: x-large;
     text-decoration: none;
     padding: 0px 15px 0px 15px;
-    color: white;
+    color: black;
     border-left: 3px solid black;
 }
 
 #nav {
     height: 30px;
-    background: darkgray;
+    background: lightgray;
     padding-top: 7px;
     padding-left: 7px;
     padding-bottom: 5px;
