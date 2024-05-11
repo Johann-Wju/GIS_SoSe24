@@ -2,104 +2,104 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Highscores</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highscores</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
+  <header>
     <nav id="nav">
-        <a href="main.html" title="Play Black Jack!"> Game </a>
-        <a href="highscore.html" title="Highscores"> Highscores </a>
-        <a href="impressum.html" title="Impressum/Legal Notice"> Impressum/Legal Notice </a>
-        <!-- Empty <a></a> to get a border behind the Impressum-->
-        <a></a>
-        <!-- TODO: Highscore is just a placeholder till JavaScript implementation-->
-        <h1 id="your-highscore">Chips: <span id="highscore"> 0025000 </span></h1>
+      <a href="main.html" title="Play Black Jack!"> Game </a>
+      <a href="highscore.html" title="Highscores"> Highscores </a>
+      <a href="impressum.html" title="Impressum/Legal Notice"> Impressum/Legal Notice </a>
+      <!-- Empty <a></a> to get a border behind the Impressum-->
+      <a></a>
+      <!-- TODO: Highscore is just a placeholder till JavaScript implementation-->
+      <h1 id="your-highscore">Chips: <span id="highscore"> </span></h1>
     </nav>
 
     <!-- TODO: Login will work, when the Backend is implemented-->
     <div id="login">
-        <label>Username:</label>
-        <input type="text" />
-        <br>
-        <label>Passwort:</label>
-        <input type="password" />
-        <br>
-        <button id="submit" type="submit">Submit</button>
+      <label>Username:</label>
+      <input type="text" />
+      <br>
+      <label>Passwort:</label>
+      <input type="password" />
+      <br>
+      <button id="submit" type="submit">Submit</button>
     </div>
-</header>
+  </header>
 
-<footer>
+  <footer>
     <div id="table">
-        <table>
-          <caption id="caption">Highscores</caption>
-      <tr>
-        <th>Position</th>
-        <th>Name</th>
-        <th>Chips</th>
+      <table>
+        <caption id="caption">Highscores</caption>
+        <tr>
+          <th>Position</th>
+          <th>Name</th>
+          <th>Chips</th>
         </tr>
-       <tr>
-        <td>1</td>
-        <td>Johann</td>
-        <td>20000500</td>
-       </tr>
-      <tr>
-        <td>2</td>
-        <td>Georg</td>
-        <td>19470000</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Ludwig</td>
-        <td>17908500</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Luca</td>
-        <td>12007500</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Justin</td>
-        <td>9753000</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Anna</td>
-        <td>5640000</td>
-       </tr>
-      <tr>
-        <td>7</td>
-        <td>Juri</td>
-        <td>3780000</td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>Elena</td>
-        <td>1290000</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>Hannah</td>
-        <td>885000</td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>Fabian</td>
-        <td>443000</td>
-      </tr>
+        <tr>
+          <td>1</td>
+          <td>Johann</td>
+          <td>20000500</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Georg</td>
+          <td>19470000</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Ludwig</td>
+          <td>17908500</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Luca</td>
+          <td>12007500</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Justin</td>
+          <td>9753000</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Anna</td>
+          <td>5640000</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Juri</td>
+          <td>3780000</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Elena</td>
+          <td>1290000</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Hannah</td>
+          <td>885000</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Fabian</td>
+          <td>443000</td>
+        </tr>
       </table>
-      </div>
+    </div>
 
-      <div>
-        <button id="reset" type="reset">Reset</button>
-      </div>
+    <div>
+      <button id="reset-highscore" type="button">Reset</button>
+    </div>
 
-</footer>
+  </footer>
 
 </body>
 

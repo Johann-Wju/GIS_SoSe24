@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Play Black Jack!</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="game.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Black Jack!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js"></script>
+</head>
 
-    <body>
+<body>
 
-        <header>
-            <nav id="nav">
-                <a href="main.html" title="Play Black Jack!"> Game </a>
-                <a href="highscore.html" title="Highscores"> Highscores </a>
-                <a href="impressum.html" title="Impressum/Legal Notice"> Impressum/Legal Notice </a>
-                <!-- Empty <a></a> to get a border behind the Impressum-->
-                <a></a>
-                <!-- TODO: Highscore is just a placeholder till JavaScript implementation-->
-                <h1 id="your-highscore">Chips: <span id="highscore"> 0025000 </span></h1>
-            </nav>
+    <header>
+        <nav id="nav">
+            <a href="main.html" title="Play Black Jack!"> Game </a>
+            <a href="highscore.html" title="Highscores"> Highscores </a>
+            <a href="impressum.html" title="Impressum/Legal Notice"> Impressum/Legal Notice </a>
+            <!-- Empty <a></a> to get a border behind the Impressum-->
+            <a></a>
+            <!-- TODO: Highscore is just a placeholder till JavaScript implementation-->
+            <h1 id="your-highscore">Chips: <span id="highscore"> </span></h1>
+        </nav>
 
-            <!-- TODO: Login will work, when the Backend is implemented-->
-            <div id="login">
-                <label>Username:</label>
-                <input type="text" />
-                <br>
-                <label>Passwort:</label>
-                <input type="password" />
-                <br>
-                <button id="submit" type="submit">Submit</button>
-            </div>
-        </header>
+        <!-- TODO: Login will work, when the Backend is implemented-->
+        <div id="login">
+            <label>Username:</label>
+            <input type="text" />
+            <br>
+            <label>Passwort:</label>
+            <input type="password" />
+            <br>
+            <button id="submit" type="submit">Submit</button>
+        </div>
+    </header>
 
-        <footer>
-        <!-- TODO: 21 and cards are just a placeholder till JavaScript implementation-->
-        <h1>Dealer: <span id="dealer-sum"> 21 </span></h1>
+    <footer>
+        <h1>Dealer: <span id="dealer-sum"> </span></h1>
 
         <div id="dealer-cards">
             <img id="hidden" src="textures\BACK.png">
-            <img id="card" src="textures\Q-S.png">
-            <img id="card" src="textures\A-C.png">
         </div>
 
-        <!-- TODO: 21 and cards are just a placeholder till JavaScript implementation-->
-        <h1>You: <span id="your-sum"> 21 </span></h1>
+        <h1>You: <span id="your-sum"> </span></h1>
 
         <div id="your-cards">
-            <img id="card" src="textures\A-D.png">
-            <img id="card" src="textures\Q-H.png">
+            
         </div>
 
         <br>
-        
+        <!-- Class für CSS -->
         <div>
             <button id="hit" type="button">Hit</button>
             <button id="stay" type="button">Stay</button>
             <button id="bet" type="button">Bet</button>
+            <button id="reset" type="button">Reset</button>
         </div>
 
         <br>
@@ -72,10 +68,9 @@
             <input type="radio" name="chips" value="20000" /><label>20000</label>
         </div>
 
-        <!-- TODO: You loose! / You win! is just a placeholder till JavaScript implementation-->
-        <h1 id="win-loose"> You loose! / You win! </h1>
-        </footer>
+        <h1 id="win-loose"> </h1>
+    </footer>
 
-    </body>
+</body>
 
 </html>

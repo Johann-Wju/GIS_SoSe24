@@ -27,15 +27,16 @@ a {
     margin-right: 15px;
     box-shadow: 6px 6px rgb(95, 95, 95);
     text-align: center;
-  }
+}
 
-  #login {
+#login {
     margin-top: 20px;
     margin-left: 15px;
     text-align: left;
-  }
+}
 
-#dealer-cards img, #your-cards img {
+#dealer-cards img,
+#your-cards img {
     height: 200px;
     width: 150px;
     margin: 5px;
@@ -46,7 +47,11 @@ a {
     padding-top: 15px;
 }
 
-#hit, #stay, #bet, #reset {
+#hit,
+#stay,
+#bet,
+#reset,
+#reset-highscore {
     width: 125px;
     height: 75px;
     font-size: 35px;
@@ -54,7 +59,10 @@ a {
     background-color: lightgray;
 }
 
-#hit:hover, #stay:hover, #bet:hover, #reset:hover {
+#hit:hover,
+#stay:hover,
+#bet:hover,
+#reset:hover {
     background-color: darkgray;
 }
 
@@ -70,7 +78,7 @@ a {
 #caption {
     margin-bottom: 10px;
     font-size: 50px;
-  }
+}
 
 #table {
     display: flex;
@@ -82,17 +90,18 @@ a {
 th {
     background: rgb(130, 15, 15);
     padding: 10px 20px;
-      color: white;
+    color: white;
 }
 
-th, td {
+th,
+td {
     border-style: solid;
     border-width: 1px 1px 1px 1px;
     border-color: black;
 }
-    
+
 td {
-      padding: 7px 20px;
-      background: lightgray;
-      color: black;
+    padding: 7px 20px;
+    background: lightgray;
+    color: black;
 }
