@@ -4,6 +4,9 @@ let yourSum = 0;
 let dealerAceCount = 0;
 let yourAceCount = 0;
 
+let totalChips = 20000; // Initial chips
+let currentBet = 0; // Current bet amount
+
 let hidden;
 let deck;
 
@@ -13,6 +16,7 @@ window.onload = function () {
     buildDeck();
     shuffleDeck();
     startGame();
+    document.getElementById("bet").addEventListener("click", placeBet);
 }
 
 function buildDeck() {
@@ -91,6 +95,11 @@ function hit() {
 }
 
 function stay() {
+    if (currentBet === 0) {
+        alert("You need to place a bet!")
+        return;
+    }
+
     dealerSum = reduceAce(dealerSum, dealerAceCount);
     yourSum = reduceAce(yourSum, yourAceCount);
 
@@ -100,23 +109,53 @@ function stay() {
     let message = "";
     if (yourSum > 21) {
         message = "You Lose!";
+        resolveBet(false);
     }
     else if (dealerSum > 21) {
         message = "You win!";
+        resolveBet(true);
     }
     //both you and dealer <= 21
     else if (yourSum == dealerSum) {
         message = "Tie!";
+        totalChips += currentBet; //refund bet on tie
     }
     else if (yourSum > dealerSum) {
         message = "You Win!";
+        resolveBet(true);
     }
     else if (yourSum < dealerSum) {
         message = "You Lose!";
+        resolveBet(false);
     }
 
     document.getElementById("dealer-sum").innerText = dealerSum;
     document.getElementById("win-loose").innerText = message;
+}
+
+function placeBet() {
+    const selectedBet = document.querySelector('input[name="chips"]:checked');
+    if (selectedBet) {
+        currentBet = parseInt(selectedBet.value);
+        if (currentBet > totalChips) {
+            alert("You don't have enough chips to place this bet.");
+            currentBet = 0;
+        } else {
+            totalChips -= currentBet;
+            document.getElementById("highscore").innerText = totalChips;
+            console.log(`Bet placed: ${currentBet}`);
+        }
+    } else {
+        alert("Please select a bet amount.");
+    }
+}
+
+function resolveBet(win) {
+    if (win) {
+        totalChips += currentBet * 2;
+    }
+    document.getElementById("highscore").innerText = totalChips;
+    currentBet = 0; // Reset current bet
 }
 
 function reset() {
@@ -127,6 +166,7 @@ function reset() {
     yourAceCount = 0;
     hidden = null;
     canHit = true;
+    currentBet = 0;
 
     // Clear the dealer's and player's cards
     document.getElementById("dealer-cards").innerHTML = '<img id="hidden" src="./textures/BACK.png">';
