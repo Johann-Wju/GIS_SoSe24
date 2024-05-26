@@ -10,13 +10,16 @@ let currentBet = 0; // Current bet amount
 let hidden;
 let deck;
 
-let canHit = true; //allows the player (you) to draw while yourSum <= 21
+let canHit = true; // allows the player (you) to draw while yourSum <= 21
 
 window.onload = function () {
     buildDeck();
     shuffleDeck();
     startGame();
     document.getElementById("bet").addEventListener("click", placeBet);
+    document.getElementById("hit").addEventListener("click", hit);
+    document.getElementById("stay").addEventListener("click", stay);
+    document.getElementById("reset").addEventListener("click", reset);
 }
 
 function buildDeck() {
@@ -42,6 +45,8 @@ function shuffleDeck() {
 }
 
 function startGame() {
+    document.getElementById("hit").disabled = true;
+    document.getElementById("stay").disabled = true;
 
     hidden = deck.pop();
     dealerSum += getValue(hidden);
@@ -67,15 +72,10 @@ function startGame() {
     }
     document.getElementById("your-sum").innerText = yourSum;
     console.log(yourSum);
-
-    document.getElementById("hit").addEventListener("click", hit);
-    document.getElementById("stay").addEventListener("click", stay);
-    document.getElementById("reset").addEventListener("click", reset);
-
 }
 
 function hit() {
-    if (!canHit) {
+    if (!canHit || currentBet === 0) {
         return;
     }
 
@@ -88,15 +88,15 @@ function hit() {
 
     if (reduceAce(yourSum, yourAceCount) >= 21) {
         canHit = false;
+        stay();
     }
 
     document.getElementById("your-sum").innerText = reduceAce(yourSum, yourAceCount);
-
 }
 
 function stay() {
     if (currentBet === 0) {
-        alert("You need to place a bet!")
+        alert("You need to place a bet!");
         return;
     }
 
@@ -110,27 +110,25 @@ function stay() {
     if (yourSum > 21) {
         message = "You Lose!";
         resolveBet(false);
-    }
-    else if (dealerSum > 21) {
-        message = "You win!";
-        resolveBet(true);
-    }
-    //both you and dealer <= 21
-    else if (yourSum == dealerSum) {
-        message = "Tie!";
-        totalChips += currentBet; //refund bet on tie
-    }
-    else if (yourSum > dealerSum) {
+    } else if (dealerSum > 21) {
         message = "You Win!";
         resolveBet(true);
-    }
-    else if (yourSum < dealerSum) {
+    } else if (yourSum === dealerSum) {
+        message = "Tie!";
+        totalChips += currentBet; // refund bet on tie
+    } else if (yourSum > dealerSum) {
+        message = "You Win!";
+        resolveBet(true);
+    } else if (yourSum < dealerSum) {
         message = "You Lose!";
         resolveBet(false);
     }
 
     document.getElementById("dealer-sum").innerText = dealerSum;
     document.getElementById("win-loose").innerText = message;
+    document.getElementById("hit").disabled = true;
+    document.getElementById("stay").disabled = true;
+    document.getElementById("bet").disabled = false; // Enable bet button for the next round
 }
 
 function placeBet() {
@@ -144,6 +142,9 @@ function placeBet() {
             totalChips -= currentBet;
             document.getElementById("highscore").innerText = totalChips;
             console.log(`Bet placed: ${currentBet}`);
+            document.getElementById("bet").disabled = true;
+            document.getElementById("hit").disabled = false;
+            document.getElementById("stay").disabled = false;
         }
     } else {
         alert("Please select a bet amount.");
@@ -175,6 +176,9 @@ function reset() {
     // Clear messages
     document.getElementById("win-loose").innerText = "";
 
+    // Re-enable the bet button
+    document.getElementById("bet").disabled = false;
+
     buildDeck();
     shuffleDeck();
     startGame();
@@ -185,7 +189,7 @@ function getValue(card) {
     let value = data[0];
 
     if (isNaN(value)) {
-        if (value == "A") {
+        if (value === "A") {
             return 11;
         }
         return 10;
@@ -193,9 +197,9 @@ function getValue(card) {
     return parseInt(value);
 }
 
-// The following two fuctions check for an Ace which can be 11 or 1, depending on the player sum
+// The following two functions check for an Ace which can be 11 or 1, depending on the player sum
 function checkAce(card) {
-    if (card[0] == "A") {
+    if (card[0] === "A") {
         return 1;
     }
     return 0;
