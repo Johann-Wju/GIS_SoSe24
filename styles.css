@@ -45,6 +45,7 @@ a {
 #your-highscore {
     text-align: right;
     padding-top: 15px;
+    font-size: 35px;
 }
 
 #hit,
@@ -62,13 +63,15 @@ a {
 #hit:hover,
 #stay:hover,
 #bet:hover,
-#reset:hover {
+#reset:hover,
+#reset-highscore:hover {
     background-color: darkgray;
 }
 
 #bets-number {
     padding-top: 20px;
-    font-size: 25px;
+    font-size: 35px;
+    word-spacing: 30px;
 }
 
 #win-loose {

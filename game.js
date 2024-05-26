@@ -58,6 +58,7 @@ function startGame() {
     initTotalChips(); // Initialize local storage
     document.getElementById("hit").disabled = true;
     document.getElementById("stay").disabled = true;
+    document.getElementById("reset").disabled = true;
     // Deal cards for the dealer
     hidden = deck.pop();
     dealerSum += getValue(hidden);
@@ -106,10 +107,13 @@ function hit() {
 }
 // Function to handle staying (ending the player's turn)
 function stay() {
+
     if (currentBet === 0) {
         alert("You need to place a bet!");
         return;
     }
+
+    document.getElementById("reset").disabled = false;
 
     dealerSum = reduceAce(dealerSum, dealerAceCount);
     yourSum = reduceAce(yourSum, yourAceCount);
