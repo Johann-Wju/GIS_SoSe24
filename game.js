@@ -1,17 +1,16 @@
+// Declare variables to store dealer and player sums, ace counts, and chip counts
 let dealerSum = 0;
 let yourSum = 0;
-
 let dealerAceCount = 0;
 let yourAceCount = 0;
-
-let totalChips = 20000; // Initial chips
+let totalChips = 20000; // Starting chips
 let currentBet = 0; // Current bet amount
-
+// Declare variables for the hidden card and the deck of cards
 let hidden;
 let deck;
-
 let canHit = true; // allows the player (you) to draw while yourSum <= 21
 
+// Load everything in as soon as the window opens
 window.onload = function () {
     buildDeck();
     shuffleDeck();
@@ -22,11 +21,21 @@ window.onload = function () {
     document.getElementById("reset").addEventListener("click", reset);
 }
 
+// Function to initialize the total amount of chips from local storage
+function initTotalChips() {
+    const savedChips = localStorage.getItem("totalChips");
+    if (savedChips !== null) {
+        totalChips = parseInt(savedChips);
+        document.getElementById("highscore").innerText = totalChips;
+    }
+}
+
+// Function to build a deck of cards using an array
 function buildDeck() {
     let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
     let types = ["C", "D", "H", "S"];
     deck = [];
-
+    // Loop through card values and types to create deck
     for (let i = 0; i < types.length; i++) {
         for (let j = 0; j < values.length; j++) {
             deck.push(values[j] + "-" + types[i]);
@@ -35,6 +44,7 @@ function buildDeck() {
 }
 
 function shuffleDeck() {
+    // Loop through deck and swap each card with a random card using Math.random
     for (let i = 0; i < deck.length; i++) {
         let j = Math.floor(Math.random() * deck.length);
         let temp = deck[i];
@@ -45,9 +55,10 @@ function shuffleDeck() {
 }
 
 function startGame() {
+    initTotalChips(); // Initialize local storage
     document.getElementById("hit").disabled = true;
     document.getElementById("stay").disabled = true;
-
+    // Deal cards for the dealer
     hidden = deck.pop();
     dealerSum += getValue(hidden);
     dealerAceCount += checkAce(hidden);
@@ -61,7 +72,7 @@ function startGame() {
     }
     document.getElementById("dealer-sum").innerText = dealerSum - getValue(hidden);
     console.log(dealerSum);
-
+    // Deal cards for the player
     for (let i = 0; i < 2; i++) {
         let cardImg = document.createElement("img");
         let card = deck.pop();
@@ -73,7 +84,7 @@ function startGame() {
     document.getElementById("your-sum").innerText = yourSum;
     console.log(yourSum);
 }
-
+// Function to handle hitting (drawing another card)
 function hit() {
     if (!canHit || currentBet === 0) {
         return;
@@ -93,7 +104,7 @@ function hit() {
 
     document.getElementById("your-sum").innerText = reduceAce(yourSum, yourAceCount);
 }
-
+// Function to handle staying (ending the player's turn)
 function stay() {
     if (currentBet === 0) {
         alert("You need to place a bet!");
@@ -130,7 +141,7 @@ function stay() {
     document.getElementById("stay").disabled = true;
     document.getElementById("bet").disabled = false; // Enable bet button for the next round
 }
-
+// Function to handle placing a bet
 function placeBet() {
     const selectedBet = document.querySelector('input[name="chips"]:checked');
     if (selectedBet) {
@@ -150,15 +161,16 @@ function placeBet() {
         alert("Please select a bet amount.");
     }
 }
-
+// Function to resolve the bet based on the game outcome
 function resolveBet(win) {
     if (win) {
         totalChips += currentBet * 2;
     }
     document.getElementById("highscore").innerText = totalChips;
     currentBet = 0; // Reset current bet
+    localStorage.setItem("totalChips", totalChips.toString()); // Save the updated total chips to local storage
 }
-
+// Function to reset the game
 function reset() {
     // Reset all variables to their initial values
     dealerSum = 0;
@@ -183,28 +195,28 @@ function reset() {
     shuffleDeck();
     startGame();
 }
-
+// Function to get the numerical value of a card
 function getValue(card) {
     let data = card.split("-");
     let value = data[0];
 
     if (isNaN(value)) {
         if (value === "A") {
-            return 11;
+            return 11; // Ace can be 11 or 1
         }
-        return 10;
+        return 10; // Card is J, Q or K
     }
     return parseInt(value);
 }
 
-// The following two functions check for an Ace which can be 11 or 1, depending on the player sum
+// Function to check if a card is an Ace
 function checkAce(card) {
     if (card[0] === "A") {
-        return 1;
+        return 1; // Return 1 if yes
     }
-    return 0;
+    return 0; // Return 0 if it isn't
 }
-
+// Function to reduce the sum by 10 if it exceeds 21 and there are Aces in the hand
 function reduceAce(playerSum, playerAceCount) {
     while (playerSum > 21 && playerAceCount > 0) {
         playerSum -= 10;
