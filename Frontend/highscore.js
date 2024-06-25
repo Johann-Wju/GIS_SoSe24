@@ -1,3 +1,11 @@
+const sqlite3 = require('sqlite3')
+const sqlite = require('sqlite');
+
+const dbFilePath = 'Backend\highscore_list.db';
+const db = await sqlite.open({
+  filename: highscore_list.db,
+  driver: sqlite3.Database,
+});
 // Load everything in as soon as the window opens
 window.onload = function () {
     initTotalChips(); // Initialize local storage
