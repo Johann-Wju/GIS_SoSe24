@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
-<!-- TODO: Eingabefeld für den Namen bei den Highscores! -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Highscores</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="highscore.js"></script>
+  <script src="highscore.js" defer></script>
 </head>
-
 <body>
-
   <header>
     <nav id="nav">
       <a href="main.html" title="Play Black Jack!"> Game </a>
       <a href="highscore.html" title="Highscores"> Highscores </a>
       <a href="impressum.html" title="Impressum/Legal Notice"> Impressum/Legal Notice </a>
-      <!-- Empty <a></a> to get a border behind the Impressum-->
       <a></a>
-      <!-- TODO: Highscore is just a placeholder till JavaScript implementation-->
       <h1 id="your-highscore">Chips: <span id="highscore"> </span></h1>
     </nav>
   </header>
-
   <footer>
     <div id="table">
       <table>
@@ -32,59 +26,18 @@
           <th>Name</th>
           <th>Chips</th>
         </tr>
-        <tr>
-          <td>1</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td></td>
-          <td></td>
-        </tr>
+        <tr><td>1</td><td></td><td></td></tr>
+        <tr><td>2</td><td></td><td></td></tr>
+        <tr><td>3</td><td></td><td></td></tr>
+        <tr><td>4</td><td></td><td></td></tr>
+        <tr><td>5</td><td></td><td></td></tr>
+        <tr><td>6</td><td></td><td></td></tr>
+        <tr><td>7</td><td></td><td></td></tr>
+        <tr><td>8</td><td></td><td></td></tr>
+        <tr><td>9</td><td></td><td></td></tr>
+        <tr><td>10</td><td></td><td></td></tr>
       </table>
     </div>
-
     <div>
       <button id="reset-highscore" type="button">New</button>
     </div>
@@ -92,12 +45,9 @@
       <h2>Submit your Highscore</h2>
       <form id="highscore-form">
         <input type="text" id="username" placeholder="Enter your name" required>
-        <button type="submit">Submit</button>
+        <button type="button" id="submit-highscore">Submit Highscore</button>
       </form>
     </div>
-
   </footer>
-
 </body>
-
 </html>
