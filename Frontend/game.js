@@ -144,7 +144,7 @@ function stay() {
     document.getElementById("win-loose").innerText = message;
     document.getElementById("hit").disabled = true;
     document.getElementById("stay").disabled = true;
-    document.getElementById("bet").disabled = false; // Enable bet button for the next round
+    document.getElementById("bet").disabled = true;
 }
 // Function to handle placing a bet
 function placeBet() {

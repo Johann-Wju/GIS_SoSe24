@@ -40,6 +40,18 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify({ message: 'Highscore submitted successfully' }));
       });
     });
+  } else if (req.method === 'GET' && req.url === '/get-highscores') {
+    db.all('SELECT name, highscore FROM users ORDER BY highscore DESC LIMIT 10', [], (err, rows) => {
+      if (err) {
+        res.statusCode = 500;
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({ message: 'Failed to fetch highscores' }));
+        return console.error(err.message);
+      }
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(rows));
+    });
   } else {
     res.statusCode = 404;
     res.setHeader('Content-Type', 'text/plain');
