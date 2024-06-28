@@ -47,7 +47,6 @@ async function submitHighscore() {
     alert('Please enter your name and ensure you have a highscore to submit.');
   }
 }
-
 // Function to load highscores
 async function loadHighscores() {
   try {

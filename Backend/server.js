@@ -8,7 +8,7 @@ const db = new sqlite3.Database('highscore_list.db');
 
 // Create an HTTP server
 const server = http.createServer((req, res) => {
-  // Set CORS headers to allow cross-origin requests
+  // Set CORS (Cross-Origin Resource Sharing) headers to allow cross-origin requests
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
